@@ -1,14 +1,15 @@
-const menuIcon = document.querySelector(".menu-icon")
-const loader = document.getElementById("loader");
-const welcomeSection = document.querySelector(".welcome");
 const body = document.querySelector("main");
-console.log(document);
+const loader = document.getElementById("loader");
+
+const welcome = document.getElementById("welcome-main-div");
+welcome.style.display = "none";
+
+const navbar  = document.getElementById("navbar-main-div");
+navbar.style.display = "none"
+
 window.addEventListener("load", () => {
-    setTimeout(() => {
-     loader.style.display = "none"
-      body.style.opacity = 1;
-  },2000)
-});
-menuIcon.addEventListener("click", () => {
-  welcomeSection.classList.toggle("hidden-welcome");
+  setTimeout(() => {
+    loader.style.display = "none";
+    body.style.opacity = 1;
+  }, 2000);
 });
