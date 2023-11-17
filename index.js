@@ -13,6 +13,8 @@ aboutMe.style.display = "none";
 const works = document.getElementById("works-main-div");
 works.style.display = "none"
 
+const viewWork = document.getElementById("view-work-main-div")
+viewWork.style.display= " none"
 window.addEventListener("load", () => {
   setTimeout(() => {
     loader.style.display = "none";
