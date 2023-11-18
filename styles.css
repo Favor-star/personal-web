@@ -75,7 +75,6 @@ main {
   align-items: center;
   transition: 0.5s;
   padding: 5vw;
- 
 }
 .menu-icon {
   display: flex;
@@ -338,7 +337,7 @@ main {
   position: relative;
   width: 100%;
   display: flex;
-  gap: 9%;
+  gap: 10%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -573,5 +572,9 @@ main {
   .welcome {
     flex-direction: column-reverse;
     gap: 3rem;
+  }
+  .buttons-div {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
