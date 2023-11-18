@@ -75,6 +75,7 @@ main {
   align-items: center;
   transition: 0.5s;
   padding: 5vw;
+ 
 }
 .menu-icon {
   display: flex;
@@ -545,6 +546,7 @@ main {
 @media only screen and (max-width: 768px) {
   .main-div {
     height: auto;
+    padding-top: 12vh;
   }
   .contact-me {
     /* flex-wrap: wrap; */
