@@ -10,11 +10,11 @@ html {
   font-family: "Poppins", sans-serif;
   outline: none;
   line-height: 150%;
-  transition: all 0.4s ease-in-out;
+  /* transition: all 1s ease-in-out; */
 }
 :root {
-  --accent: #66ff00;
-  /* --accent: cyan; */
+  /* --accent: #66ff00; */
+  --accent: cyan;
   --white: #fff;
   --black: #000;
   --bg-gradient: linear-gradient(
@@ -48,9 +48,9 @@ main {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  display: flex;
+  /* display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: center; */
 
   transition: 1s;
   opacity: 0;
@@ -58,11 +58,13 @@ main {
 }
 
 .main-div {
+  display: block;
   max-width: 1152px;
   width: 90vw;
+  height: auto;
   min-height: 864px;
-  height: 90vh;
-  margin: 5vh 5vw;
+  min-height: 90vh;
+  margin: 5vh auto;
   background: var(--bg-gradient);
   backdrop-filter: var(--bg-filter);
   border: var(--border);
@@ -94,18 +96,14 @@ main {
 }
 .welcome {
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
+  /* margin: auto; */
   scale: 1;
   transition: 0.5s;
 }
-.hidden-welcome {
-  scale: 0;
-  opacity: 0;
-  translate: -100%;
-}
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -132,11 +130,14 @@ main {
 }
 .welcome-images {
   position: relative;
+  width: fit-content;
 }
 .img {
   display: block;
-  height: 357px;
-  width: 286px;
+  /* height: 357px; */
+  width: 100%;
+  max-width: 286px;
+  aspect-ratio: 0.8 / 1;
   object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
@@ -202,17 +203,17 @@ main {
   font-weight: 600;
   text-decoration: none;
 }
-#about-me-main-div {
-  height: auto;
-  margin-top: 5vh;
-  scroll-behavior: smooth;
-}
+
 .about-me {
   display: grid;
-  gap: 10%;
-  grid-template-columns: auto 1fr;
-  /* min-height: 90%; */
-  width: 90%;
+  gap: 3rem;
+
+  /* grid-template-columns: auto 1fr; */
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  grid-template-columns: minmax(auto, max-content) 1fr;
+
+  min-height: 90%;
+  width: 100%;
 }
 .about-me-contents {
   display: flex;
@@ -251,9 +252,12 @@ main {
   font-weight: 600;
   margin-bottom: 1rem;
 }
+.main-edu-contents {
+  height: auto;
+  /* border: 1px solid red; */
+}
 .main-edu-contents .timeline {
   width: 100%;
-  /* height: fit-content; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -333,15 +337,12 @@ main {
   position: relative;
   width: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 9%;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-#works-main-div {
-  padding-left: 3vw;
-  padding-right: 3vw;
-  height: auto;
-  margin-top: 5vh;
-}
+
 .works-title {
   font-size: 25px;
   font-weight: 700;
@@ -412,11 +413,11 @@ main {
   font-size: var(--main-text);
   padding: 6px 15px;
 }
-#view-work-main-div {
+/* #view-work-main-div {
   height: auto;
   margin-top: 5vh;
   padding-bottom: 3vw;
-}
+} */
 .view-work {
   width: 100%;
   height: 100%;
@@ -488,7 +489,6 @@ main {
   font-weight: 400;
 }
 .one-input .inputs {
-  
   width: 100%;
   padding: 8px 10px;
   font-size: 14px;
@@ -506,10 +506,8 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-
 }
 .contact-item {
-
   display: flex;
   width: 100%;
   height: 50%;
@@ -525,8 +523,53 @@ main {
   font-size: 18px;
   display: flex;
   flex-direction: column;
+  word-wrap: break-word;
 }
 .contact-link-icons {
   font-size: 36px;
   cursor: pointer;
+}
+.hidden {
+  /* scale: 0; */
+  opacity: 0;
+  /* translate: -100%; */
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+}
+.shown {
+  scale: 1;
+  opacity: 1;
+  /* translate: 100%; */
+  /* transition: all .4s ease-in-out; */
+}
+@media only screen and (max-width: 768px) {
+  .main-div {
+    height: auto;
+  }
+  .contact-me {
+    /* flex-wrap: wrap; */
+    height: auto;
+    flex-direction: column-reverse;
+    gap: 3rem;
+    width: 100%;
+    margin-top: 2vh;
+  }
+  .send-message {
+    width: 100%;
+  }
+  .contact-links {
+    width: 100%;
+  }
+  .about-me {
+    grid-template-columns: 1fr;
+  }
+  .welcome-images {
+    align-self: center;
+    justify-self: center;
+    flex: 1;
+  }
+  .welcome {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
 }
